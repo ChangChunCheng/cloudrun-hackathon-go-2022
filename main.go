@@ -37,10 +37,6 @@ func getPOST(ctx *gin.Context) {
 
 func main() {
 	r := gin.Default()
-	r.GET("/ping", func(c *gin.Context) {
-		c.JSON(http.StatusOK, gin.H{
-			"message": "pong",
-		})
-	})
+	r.POST("/", getPOST)
 	r.Run(":8080")
 }
